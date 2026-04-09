@@ -1,0 +1,16 @@
+kd,test_type,throttle_rate_mean,throttle_rate_max,pct_nonzero
+k0s,idle,0.0,0.0,0.0
+k0s,cp_heavy_12client,0.0,0.0,0.0
+k0s,dp_redis_density,0.0,0.0,0.0
+k3s,idle,0.0,0.0,0.0
+k3s,cp_heavy_12client,0.0,0.0,0.0
+k3s,dp_redis_density,0.0,0.0,0.0
+k8s,idle,0.0,0.0,0.0
+k8s,cp_heavy_12client,0.0,0.0,0.0
+k8s,dp_redis_density,0.0,0.0,0.0
+kubeEdge,idle,0.0,0.0,0.0
+kubeEdge,cp_heavy_12client,0.0,0.0,0.0
+kubeEdge,dp_redis_density,0.0,0.0,0.0
+openYurt,idle,0.0,0.0,0.0
+openYurt,cp_heavy_12client,0.0,0.0,0.0
+openYurt,dp_redis_density,0.0,0.0,0.0
