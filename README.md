@@ -142,6 +142,6 @@ Each parquet file contains Netdata monitoring metrics in long format:
 
 The raw parquet files were extracted from a 1.9-billion-document MongoDB database using `extraction/extract_universal.py`. The extraction scripts are included for reference but require the original MongoDB instance (not included) to run.
 
-## License
-
+# License
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.  
 Research data and analysis code for academic use. If you use this data, please cite the associated publications.
