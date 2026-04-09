@@ -1,0 +1,1756 @@
+{
+  "probe_timestamp": "2026-02-23T20:18:24.561440",
+  "mongo_uri": "mongodb://localhost:27018",
+  "contexts": {
+    "cpufreq.cpufreq": {
+      "k3s": {
+        "cp_heavy_12client": {
+          "available": true,
+          "count": 1608,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "MHz"
+          ],
+          "chart_ids": [
+            "cpu.cpufreq"
+          ]
+        },
+        "dp_redis_density": {
+          "available": true,
+          "count": 4152,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "MHz"
+          ],
+          "chart_ids": [
+            "cpu.cpufreq"
+          ]
+        },
+        "idle": {
+          "available": true,
+          "count": 1440,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "MHz"
+          ],
+          "chart_ids": [
+            "cpu.cpufreq"
+          ]
+        }
+      },
+      "k0s": {
+        "cp_heavy_12client": {
+          "available": true,
+          "count": 1608,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "MHz"
+          ],
+          "chart_ids": [
+            "cpu.cpufreq"
+          ]
+        },
+        "dp_redis_density": {
+          "available": true,
+          "count": 2148,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master"
+          ],
+          "worker_hosts": [],
+          "units": [
+            "MHz"
+          ],
+          "chart_ids": [
+            "cpu.cpufreq"
+          ]
+        },
+        "idle": {
+          "available": true,
+          "count": 1464,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "MHz"
+          ],
+          "chart_ids": [
+            "cpu.cpufreq"
+          ]
+        }
+      },
+      "k8s": {
+        "cp_heavy_12client": {
+          "available": true,
+          "count": 1584,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "MHz"
+          ],
+          "chart_ids": [
+            "cpu.cpufreq"
+          ]
+        },
+        "dp_redis_density": {
+          "available": true,
+          "count": 4176,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "MHz"
+          ],
+          "chart_ids": [
+            "cpu.cpufreq"
+          ]
+        },
+        "idle": {
+          "available": true,
+          "count": 1464,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "MHz"
+          ],
+          "chart_ids": [
+            "cpu.cpufreq"
+          ]
+        }
+      },
+      "kubeEdge": {
+        "cp_heavy_12client": {
+          "available": true,
+          "count": 3216,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "MHz"
+          ],
+          "chart_ids": [
+            "cpu.cpufreq"
+          ]
+        },
+        "dp_redis_density": {
+          "available": true,
+          "count": 3888,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "MHz"
+          ],
+          "chart_ids": [
+            "cpu.cpufreq"
+          ]
+        },
+        "idle": {
+          "available": true,
+          "count": 1440,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "MHz"
+          ],
+          "chart_ids": [
+            "cpu.cpufreq"
+          ]
+        }
+      },
+      "openYurt": {
+        "cp_heavy_12client": {
+          "available": true,
+          "count": 1656,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "MHz"
+          ],
+          "chart_ids": [
+            "cpu.cpufreq"
+          ]
+        },
+        "dp_redis_density": {
+          "available": true,
+          "count": 3792,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "MHz"
+          ],
+          "chart_ids": [
+            "cpu.cpufreq"
+          ]
+        },
+        "idle": {
+          "available": true,
+          "count": 1440,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "MHz"
+          ],
+          "chart_ids": [
+            "cpu.cpufreq"
+          ]
+        }
+      }
+    },
+    "cpuidle.cpu_cstate_residency_time": {
+      "k3s": {
+        "cp_heavy_12client": {
+          "available": false
+        },
+        "dp_redis_density": {
+          "available": false
+        },
+        "idle": {
+          "available": false
+        }
+      },
+      "k0s": {
+        "cp_heavy_12client": {
+          "available": true,
+          "count": 4824,
+          "ids": [
+            "active",
+            "c1_acpi",
+            "c2_acpi",
+            "c3_acpi",
+            "poll"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "percentage"
+          ],
+          "chart_ids": [
+            "cpu.cpu0_cpuidle",
+            "cpu.cpu10_cpuidle",
+            "cpu.cpu11_cpuidle",
+            "cpu.cpu1_cpuidle",
+            "cpu.cpu2_cpuidle",
+            "cpu.cpu3_cpuidle",
+            "cpu.cpu4_cpuidle",
+            "cpu.cpu5_cpuidle",
+            "cpu.cpu6_cpuidle",
+            "cpu.cpu7_cpuidle"
+          ]
+        },
+        "dp_redis_density": {
+          "available": true,
+          "count": 10740,
+          "ids": [
+            "active",
+            "c1_acpi",
+            "c2_acpi",
+            "c3_acpi",
+            "poll"
+          ],
+          "hostnames": [
+            "master"
+          ],
+          "worker_hosts": [],
+          "units": [
+            "percentage"
+          ],
+          "chart_ids": [
+            "cpu.cpu0_cpuidle",
+            "cpu.cpu10_cpuidle",
+            "cpu.cpu11_cpuidle",
+            "cpu.cpu1_cpuidle",
+            "cpu.cpu2_cpuidle",
+            "cpu.cpu3_cpuidle",
+            "cpu.cpu4_cpuidle",
+            "cpu.cpu5_cpuidle",
+            "cpu.cpu6_cpuidle",
+            "cpu.cpu7_cpuidle"
+          ]
+        },
+        "idle": {
+          "available": true,
+          "count": 4392,
+          "ids": [
+            "active",
+            "c1_acpi",
+            "c2_acpi",
+            "c3_acpi",
+            "poll"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "percentage"
+          ],
+          "chart_ids": [
+            "cpu.cpu0_cpuidle",
+            "cpu.cpu10_cpuidle",
+            "cpu.cpu11_cpuidle",
+            "cpu.cpu1_cpuidle",
+            "cpu.cpu2_cpuidle",
+            "cpu.cpu3_cpuidle",
+            "cpu.cpu4_cpuidle",
+            "cpu.cpu5_cpuidle",
+            "cpu.cpu6_cpuidle",
+            "cpu.cpu7_cpuidle"
+          ]
+        }
+      },
+      "k8s": {
+        "cp_heavy_12client": {
+          "available": false
+        },
+        "dp_redis_density": {
+          "available": false
+        },
+        "idle": {
+          "available": false
+        }
+      },
+      "kubeEdge": {
+        "cp_heavy_12client": {
+          "available": false
+        },
+        "dp_redis_density": {
+          "available": false
+        },
+        "idle": {
+          "available": false
+        }
+      },
+      "openYurt": {
+        "cp_heavy_12client": {
+          "available": false
+        },
+        "dp_redis_density": {
+          "available": false
+        },
+        "idle": {
+          "available": false
+        }
+      }
+    },
+    "cpu.core_throttling": {
+      "k3s": {
+        "cp_heavy_12client": {
+          "available": true,
+          "count": 804,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master"
+          ],
+          "worker_hosts": [],
+          "units": [
+            "events/s"
+          ],
+          "chart_ids": [
+            "cpu.core_throttling"
+          ]
+        },
+        "dp_redis_density": {
+          "available": true,
+          "count": 2076,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master"
+          ],
+          "worker_hosts": [],
+          "units": [
+            "events/s"
+          ],
+          "chart_ids": [
+            "cpu.core_throttling"
+          ]
+        },
+        "idle": {
+          "available": true,
+          "count": 720,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master"
+          ],
+          "worker_hosts": [],
+          "units": [
+            "events/s"
+          ],
+          "chart_ids": [
+            "cpu.core_throttling"
+          ]
+        }
+      },
+      "k0s": {
+        "cp_heavy_12client": {
+          "available": true,
+          "count": 804,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master"
+          ],
+          "worker_hosts": [],
+          "units": [
+            "events/s"
+          ],
+          "chart_ids": [
+            "cpu.core_throttling"
+          ]
+        },
+        "dp_redis_density": {
+          "available": true,
+          "count": 2148,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master"
+          ],
+          "worker_hosts": [],
+          "units": [
+            "events/s"
+          ],
+          "chart_ids": [
+            "cpu.core_throttling"
+          ]
+        },
+        "idle": {
+          "available": true,
+          "count": 732,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master"
+          ],
+          "worker_hosts": [],
+          "units": [
+            "events/s"
+          ],
+          "chart_ids": [
+            "cpu.core_throttling"
+          ]
+        }
+      },
+      "k8s": {
+        "cp_heavy_12client": {
+          "available": true,
+          "count": 792,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master"
+          ],
+          "worker_hosts": [],
+          "units": [
+            "events/s"
+          ],
+          "chart_ids": [
+            "cpu.core_throttling"
+          ]
+        },
+        "dp_redis_density": {
+          "available": true,
+          "count": 2088,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master"
+          ],
+          "worker_hosts": [],
+          "units": [
+            "events/s"
+          ],
+          "chart_ids": [
+            "cpu.core_throttling"
+          ]
+        },
+        "idle": {
+          "available": true,
+          "count": 732,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master"
+          ],
+          "worker_hosts": [],
+          "units": [
+            "events/s"
+          ],
+          "chart_ids": [
+            "cpu.core_throttling"
+          ]
+        }
+      },
+      "kubeEdge": {
+        "cp_heavy_12client": {
+          "available": true,
+          "count": 1608,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master"
+          ],
+          "worker_hosts": [],
+          "units": [
+            "events/s"
+          ],
+          "chart_ids": [
+            "cpu.core_throttling"
+          ]
+        },
+        "dp_redis_density": {
+          "available": true,
+          "count": 1944,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master"
+          ],
+          "worker_hosts": [],
+          "units": [
+            "events/s"
+          ],
+          "chart_ids": [
+            "cpu.core_throttling"
+          ]
+        },
+        "idle": {
+          "available": true,
+          "count": 720,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master"
+          ],
+          "worker_hosts": [],
+          "units": [
+            "events/s"
+          ],
+          "chart_ids": [
+            "cpu.core_throttling"
+          ]
+        }
+      },
+      "openYurt": {
+        "cp_heavy_12client": {
+          "available": true,
+          "count": 828,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master"
+          ],
+          "worker_hosts": [],
+          "units": [
+            "events/s"
+          ],
+          "chart_ids": [
+            "cpu.core_throttling"
+          ]
+        },
+        "dp_redis_density": {
+          "available": true,
+          "count": 1896,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master"
+          ],
+          "worker_hosts": [],
+          "units": [
+            "events/s"
+          ],
+          "chart_ids": [
+            "cpu.core_throttling"
+          ]
+        },
+        "idle": {
+          "available": true,
+          "count": 720,
+          "ids": [
+            "cpu0",
+            "cpu1",
+            "cpu10",
+            "cpu11",
+            "cpu2",
+            "cpu3",
+            "cpu4",
+            "cpu5",
+            "cpu6",
+            "cpu7",
+            "cpu8",
+            "cpu9"
+          ],
+          "hostnames": [
+            "master"
+          ],
+          "worker_hosts": [],
+          "units": [
+            "events/s"
+          ],
+          "chart_ids": [
+            "cpu.core_throttling"
+          ]
+        }
+      }
+    },
+    "cpu.interrupts": {
+      "k3s": {
+        "cp_heavy_12client": {
+          "available": false
+        },
+        "dp_redis_density": {
+          "available": false
+        },
+        "idle": {
+          "available": false
+        }
+      },
+      "k0s": {
+        "cp_heavy_12client": {
+          "available": true,
+          "count": 13266,
+          "ids": [
+            "11",
+            "128",
+            "129",
+            "132",
+            "135",
+            "14",
+            "147",
+            "149",
+            "150",
+            "151",
+            "152",
+            "153",
+            "154",
+            "155",
+            "156",
+            "157",
+            "158",
+            "159",
+            "16",
+            "160",
+            "162",
+            "163",
+            "164",
+            "17",
+            "177",
+            "178",
+            "18",
+            "19",
+            "21",
+            "25",
+            "32",
+            "33",
+            "40",
+            "41",
+            "48",
+            "65",
+            "9",
+            "CAL",
+            "IPI0",
+            "IPI1",
+            "IPI5",
+            "IWI",
+            "LOC",
+            "MCP",
+            "NMI",
+            "PMI",
+            "RES",
+            "TLB"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "interrupts/s"
+          ],
+          "chart_ids": [
+            "cpu.cpu0_interrupts",
+            "cpu.cpu10_interrupts",
+            "cpu.cpu11_interrupts",
+            "cpu.cpu1_interrupts",
+            "cpu.cpu2_interrupts",
+            "cpu.cpu3_interrupts",
+            "cpu.cpu4_interrupts",
+            "cpu.cpu5_interrupts",
+            "cpu.cpu6_interrupts",
+            "cpu.cpu7_interrupts"
+          ]
+        },
+        "dp_redis_density": {
+          "available": true,
+          "count": 20585,
+          "ids": [
+            "128",
+            "130",
+            "131",
+            "132",
+            "148",
+            "150",
+            "151",
+            "152",
+            "153",
+            "154",
+            "155",
+            "156",
+            "157",
+            "158",
+            "159",
+            "16",
+            "160",
+            "161",
+            "162",
+            "163",
+            "164",
+            "177",
+            "178",
+            "18",
+            "65",
+            "9",
+            "CAL",
+            "IWI",
+            "LOC",
+            "MCP",
+            "NMI",
+            "PMI",
+            "RES",
+            "TLB"
+          ],
+          "hostnames": [
+            "master"
+          ],
+          "worker_hosts": [],
+          "units": [
+            "interrupts/s"
+          ],
+          "chart_ids": [
+            "cpu.cpu0_interrupts",
+            "cpu.cpu10_interrupts",
+            "cpu.cpu11_interrupts",
+            "cpu.cpu1_interrupts",
+            "cpu.cpu2_interrupts",
+            "cpu.cpu3_interrupts",
+            "cpu.cpu4_interrupts",
+            "cpu.cpu5_interrupts",
+            "cpu.cpu6_interrupts",
+            "cpu.cpu7_interrupts"
+          ]
+        },
+        "idle": {
+          "available": true,
+          "count": 12139,
+          "ids": [
+            "11",
+            "128",
+            "130",
+            "131",
+            "14",
+            "146",
+            "148",
+            "150",
+            "151",
+            "152",
+            "153",
+            "154",
+            "155",
+            "156",
+            "157",
+            "158",
+            "159",
+            "16",
+            "160",
+            "161",
+            "162",
+            "163",
+            "164",
+            "17",
+            "177",
+            "178",
+            "18",
+            "19",
+            "21",
+            "25",
+            "32",
+            "33",
+            "40",
+            "41",
+            "48",
+            "65",
+            "9",
+            "CAL",
+            "IPI0",
+            "IPI1",
+            "IPI5",
+            "IWI",
+            "LOC",
+            "MCP",
+            "NMI",
+            "PMI",
+            "RES",
+            "TLB"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "interrupts/s"
+          ],
+          "chart_ids": [
+            "cpu.cpu0_interrupts",
+            "cpu.cpu10_interrupts",
+            "cpu.cpu11_interrupts",
+            "cpu.cpu1_interrupts",
+            "cpu.cpu2_interrupts",
+            "cpu.cpu3_interrupts",
+            "cpu.cpu4_interrupts",
+            "cpu.cpu5_interrupts",
+            "cpu.cpu6_interrupts",
+            "cpu.cpu7_interrupts"
+          ]
+        }
+      },
+      "k8s": {
+        "cp_heavy_12client": {
+          "available": false
+        },
+        "dp_redis_density": {
+          "available": false
+        },
+        "idle": {
+          "available": false
+        }
+      },
+      "kubeEdge": {
+        "cp_heavy_12client": {
+          "available": false
+        },
+        "dp_redis_density": {
+          "available": false
+        },
+        "idle": {
+          "available": false
+        }
+      },
+      "openYurt": {
+        "cp_heavy_12client": {
+          "available": false
+        },
+        "dp_redis_density": {
+          "available": false
+        },
+        "idle": {
+          "available": false
+        }
+      }
+    },
+    "cpu.softirqs": {
+      "k3s": {
+        "cp_heavy_12client": {
+          "available": false
+        },
+        "dp_redis_density": {
+          "available": false
+        },
+        "idle": {
+          "available": false
+        }
+      },
+      "k0s": {
+        "cp_heavy_12client": {
+          "available": true,
+          "count": 11993,
+          "ids": [
+            "BLOCK",
+            "HI",
+            "NET_RX",
+            "NET_TX",
+            "RCU",
+            "SCHED",
+            "TASKLET",
+            "TIMER"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "softirqs/s"
+          ],
+          "chart_ids": [
+            "cpu.cpu0_softirqs",
+            "cpu.cpu10_softirqs",
+            "cpu.cpu11_softirqs",
+            "cpu.cpu1_softirqs",
+            "cpu.cpu2_softirqs",
+            "cpu.cpu3_softirqs",
+            "cpu.cpu4_softirqs",
+            "cpu.cpu5_softirqs",
+            "cpu.cpu6_softirqs",
+            "cpu.cpu7_softirqs"
+          ]
+        },
+        "dp_redis_density": {
+          "available": true,
+          "count": 15215,
+          "ids": [
+            "BLOCK",
+            "HI",
+            "NET_RX",
+            "NET_TX",
+            "RCU",
+            "SCHED",
+            "TASKLET",
+            "TIMER"
+          ],
+          "hostnames": [
+            "master"
+          ],
+          "worker_hosts": [],
+          "units": [
+            "softirqs/s"
+          ],
+          "chart_ids": [
+            "cpu.cpu0_softirqs",
+            "cpu.cpu10_softirqs",
+            "cpu.cpu11_softirqs",
+            "cpu.cpu1_softirqs",
+            "cpu.cpu2_softirqs",
+            "cpu.cpu3_softirqs",
+            "cpu.cpu4_softirqs",
+            "cpu.cpu5_softirqs",
+            "cpu.cpu6_softirqs",
+            "cpu.cpu7_softirqs"
+          ]
+        },
+        "idle": {
+          "available": true,
+          "count": 11041,
+          "ids": [
+            "BLOCK",
+            "HI",
+            "NET_RX",
+            "NET_TX",
+            "RCU",
+            "SCHED",
+            "TASKLET",
+            "TIMER"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "softirqs/s"
+          ],
+          "chart_ids": [
+            "cpu.cpu0_softirqs",
+            "cpu.cpu10_softirqs",
+            "cpu.cpu11_softirqs",
+            "cpu.cpu1_softirqs",
+            "cpu.cpu2_softirqs",
+            "cpu.cpu3_softirqs",
+            "cpu.cpu4_softirqs",
+            "cpu.cpu5_softirqs",
+            "cpu.cpu6_softirqs",
+            "cpu.cpu7_softirqs"
+          ]
+        }
+      },
+      "k8s": {
+        "cp_heavy_12client": {
+          "available": false
+        },
+        "dp_redis_density": {
+          "available": false
+        },
+        "idle": {
+          "available": false
+        }
+      },
+      "kubeEdge": {
+        "cp_heavy_12client": {
+          "available": false
+        },
+        "dp_redis_density": {
+          "available": false
+        },
+        "idle": {
+          "available": false
+        }
+      },
+      "openYurt": {
+        "cp_heavy_12client": {
+          "available": false
+        },
+        "dp_redis_density": {
+          "available": false
+        },
+        "idle": {
+          "available": false
+        }
+      }
+    },
+    "cpu.softnet_stat": {
+      "k3s": {
+        "cp_heavy_12client": {
+          "available": false
+        },
+        "dp_redis_density": {
+          "available": false
+        },
+        "idle": {
+          "available": false
+        }
+      },
+      "k0s": {
+        "cp_heavy_12client": {
+          "available": true,
+          "count": 8040,
+          "ids": [
+            "dropped",
+            "flow_limit_count",
+            "processed",
+            "received_rps",
+            "squeezed"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "events/s"
+          ],
+          "chart_ids": [
+            "cpu.cpu0_softnet_stat",
+            "cpu.cpu10_softnet_stat",
+            "cpu.cpu11_softnet_stat",
+            "cpu.cpu1_softnet_stat",
+            "cpu.cpu2_softnet_stat",
+            "cpu.cpu3_softnet_stat",
+            "cpu.cpu4_softnet_stat",
+            "cpu.cpu5_softnet_stat",
+            "cpu.cpu6_softnet_stat",
+            "cpu.cpu7_softnet_stat"
+          ]
+        },
+        "dp_redis_density": {
+          "available": true,
+          "count": 10740,
+          "ids": [
+            "dropped",
+            "flow_limit_count",
+            "processed",
+            "received_rps",
+            "squeezed"
+          ],
+          "hostnames": [
+            "master"
+          ],
+          "worker_hosts": [],
+          "units": [
+            "events/s"
+          ],
+          "chart_ids": [
+            "cpu.cpu0_softnet_stat",
+            "cpu.cpu10_softnet_stat",
+            "cpu.cpu11_softnet_stat",
+            "cpu.cpu1_softnet_stat",
+            "cpu.cpu2_softnet_stat",
+            "cpu.cpu3_softnet_stat",
+            "cpu.cpu4_softnet_stat",
+            "cpu.cpu5_softnet_stat",
+            "cpu.cpu6_softnet_stat",
+            "cpu.cpu7_softnet_stat"
+          ]
+        },
+        "idle": {
+          "available": true,
+          "count": 7320,
+          "ids": [
+            "dropped",
+            "flow_limit_count",
+            "processed",
+            "received_rps",
+            "squeezed"
+          ],
+          "hostnames": [
+            "master",
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "worker_hosts": [
+            "node_1",
+            "node_2",
+            "node_3"
+          ],
+          "units": [
+            "events/s"
+          ],
+          "chart_ids": [
+            "cpu.cpu0_softnet_stat",
+            "cpu.cpu10_softnet_stat",
+            "cpu.cpu11_softnet_stat",
+            "cpu.cpu1_softnet_stat",
+            "cpu.cpu2_softnet_stat",
+            "cpu.cpu3_softnet_stat",
+            "cpu.cpu4_softnet_stat",
+            "cpu.cpu5_softnet_stat",
+            "cpu.cpu6_softnet_stat",
+            "cpu.cpu7_softnet_stat"
+          ]
+        }
+      },
+      "k8s": {
+        "cp_heavy_12client": {
+          "available": false
+        },
+        "dp_redis_density": {
+          "available": false
+        },
+        "idle": {
+          "available": false
+        }
+      },
+      "kubeEdge": {
+        "cp_heavy_12client": {
+          "available": false
+        },
+        "dp_redis_density": {
+          "available": false
+        },
+        "idle": {
+          "available": false
+        }
+      },
+      "openYurt": {
+        "cp_heavy_12client": {
+          "available": false
+        },
+        "dp_redis_density": {
+          "available": false
+        },
+        "idle": {
+          "available": false
+        }
+      }
+    }
+  },
+  "summary": {
+    "total_contexts_probed": 6,
+    "contexts_with_data": [
+      "cpufreq.cpufreq",
+      "cpuidle.cpu_cstate_residency_time",
+      "cpu.core_throttling",
+      "cpu.interrupts",
+      "cpu.softirqs",
+      "cpu.softnet_stat"
+    ],
+    "contexts_missing": [],
+    "coverage_matrix": {
+      "cpufreq.cpufreq": {
+        "k0s": true,
+        "k3s": true,
+        "k8s": true,
+        "kubeEdge": true,
+        "openYurt": true
+      },
+      "cpuidle.cpu_cstate_residency_time": {
+        "k0s": true,
+        "k3s": false,
+        "k8s": false,
+        "kubeEdge": false,
+        "openYurt": false
+      },
+      "cpu.core_throttling": {
+        "k0s": true,
+        "k3s": true,
+        "k8s": true,
+        "kubeEdge": true,
+        "openYurt": true
+      },
+      "cpu.interrupts": {
+        "k0s": true,
+        "k3s": false,
+        "k8s": false,
+        "kubeEdge": false,
+        "openYurt": false
+      },
+      "cpu.softirqs": {
+        "k0s": true,
+        "k3s": false,
+        "k8s": false,
+        "kubeEdge": false,
+        "openYurt": false
+      },
+      "cpu.softnet_stat": {
+        "k0s": true,
+        "k3s": false,
+        "k8s": false,
+        "kubeEdge": false,
+        "openYurt": false
+      }
+    }
+  }
+}
