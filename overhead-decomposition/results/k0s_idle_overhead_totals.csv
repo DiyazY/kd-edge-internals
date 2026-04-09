@@ -1,0 +1,10 @@
+metric,total_mean,total_std
+cpu_pct,1.521948,0.023024
+cpu_pressure,0.000000,0.000000
+io_kibs,0.000000,0.000000
+mem_mib,46.325621,0.387912
+mem_pressure,0.000000,0.000000
+mem_util_pct,8.148426,0.254054
+net_kbps,0.506123,0.023148
+pgfaults,0.065740,0.002494
+throttled,0.000000,0.000000

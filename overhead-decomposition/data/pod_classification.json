@@ -1,0 +1,207 @@
+[
+  {
+    "kd": "k0s",
+    "hostname": "node_2",
+    "pod_uuid": "pod04fbd389-0b9e-488d-8a21-997668c7629d",
+    "qos_class": "burstable",
+    "role": "system",
+    "classification_method": "idle_enumeration",
+    "found_in_idle": true,
+    "found_in_loaded": [
+      "cp_heavy_12client",
+      "dp_redis_density"
+    ],
+    "contexts": [
+      "cpu_pct",
+      "cpu_pressure",
+      "io_kibs",
+      "mem_mib",
+      "mem_pressure",
+      "mem_util_pct",
+      "net_kbps",
+      "pgfaults",
+      "throttled"
+    ]
+  },
+  {
+    "kd": "k0s",
+    "hostname": "node_2",
+    "pod_uuid": "pod05005dfb-93a7-41d7-a0e7-0f375e4ec190",
+    "qos_class": "besteffort",
+    "role": "workload",
+    "classification_method": "differential_analysis",
+    "found_in_idle": false,
+    "found_in_loaded": [
+      "dp_redis_density"
+    ],
+    "contexts": [
+      "cpu_pct",
+      "cpu_pressure",
+      "io_kibs",
+      "mem_mib",
+      "mem_pressure",
+      "mem_util_pct",
+      "net_kbps",
+      "pgfaults",
+      "throttled"
+    ]
+  },
+  {
+    "kd": "k0s",
+    "hostname": "node_2",
+    "pod_uuid": "pod2cbb941b-2864-43cd-8f2c-39d633b97ac2",
+    "qos_class": "besteffort",
+    "role": "workload",
+    "classification_method": "differential_analysis",
+    "found_in_idle": false,
+    "found_in_loaded": [
+      "cp_heavy_12client"
+    ],
+    "contexts": [
+      "cpu_pct",
+      "cpu_pressure",
+      "mem_mib",
+      "mem_pressure",
+      "mem_util_pct",
+      "net_kbps",
+      "pgfaults",
+      "throttled"
+    ]
+  },
+  {
+    "kd": "k0s",
+    "hostname": "node_2",
+    "pod_uuid": "pod38d24f87-32c3-4d8b-ab11-4f3f6b7e5be3",
+    "qos_class": "besteffort",
+    "role": "workload",
+    "classification_method": "differential_analysis",
+    "found_in_idle": false,
+    "found_in_loaded": [
+      "cp_heavy_12client"
+    ],
+    "contexts": [
+      "cpu_pct",
+      "cpu_pressure",
+      "mem_mib",
+      "mem_pressure",
+      "mem_util_pct",
+      "net_kbps",
+      "pgfaults",
+      "throttled"
+    ]
+  },
+  {
+    "kd": "k0s",
+    "hostname": "node_2",
+    "pod_uuid": "pod49c27a47-d6b5-406b-9b0c-f9ba8dd0f44b",
+    "qos_class": "besteffort",
+    "role": "system",
+    "classification_method": "idle_enumeration",
+    "found_in_idle": true,
+    "found_in_loaded": [
+      "cp_heavy_12client",
+      "dp_redis_density"
+    ],
+    "contexts": [
+      "cpu_pct",
+      "cpu_pressure",
+      "io_kibs",
+      "mem_mib",
+      "mem_pressure",
+      "mem_util_pct",
+      "net_kbps",
+      "pgfaults",
+      "throttled"
+    ]
+  },
+  {
+    "kd": "k0s",
+    "hostname": "node_2",
+    "pod_uuid": "pod733e3255-16b1-42ff-b45b-e6467e90348a",
+    "qos_class": "besteffort",
+    "role": "workload",
+    "classification_method": "differential_analysis",
+    "found_in_idle": false,
+    "found_in_loaded": [
+      "cp_heavy_12client"
+    ],
+    "contexts": [
+      "cpu_pct",
+      "cpu_pressure",
+      "mem_mib",
+      "mem_pressure",
+      "mem_util_pct",
+      "net_kbps",
+      "pgfaults",
+      "throttled"
+    ]
+  },
+  {
+    "kd": "k0s",
+    "hostname": "node_2",
+    "pod_uuid": "pod8f35ebf1-bbe9-4b88-afb8-50917b325f3f",
+    "qos_class": "besteffort",
+    "role": "workload",
+    "classification_method": "differential_analysis",
+    "found_in_idle": false,
+    "found_in_loaded": [
+      "cp_heavy_12client"
+    ],
+    "contexts": [
+      "cpu_pct",
+      "cpu_pressure",
+      "mem_mib",
+      "mem_pressure",
+      "mem_util_pct",
+      "net_kbps",
+      "pgfaults",
+      "throttled"
+    ]
+  },
+  {
+    "kd": "k0s",
+    "hostname": "node_2",
+    "pod_uuid": "podc240079d-c524-404e-aa4e-2847580cfe07",
+    "qos_class": "besteffort",
+    "role": "system",
+    "classification_method": "idle_enumeration",
+    "found_in_idle": true,
+    "found_in_loaded": [
+      "cp_heavy_12client",
+      "dp_redis_density"
+    ],
+    "contexts": [
+      "cpu_pct",
+      "cpu_pressure",
+      "io_kibs",
+      "mem_mib",
+      "mem_pressure",
+      "mem_util_pct",
+      "pgfaults",
+      "throttled"
+    ]
+  },
+  {
+    "kd": "k0s",
+    "hostname": "node_2",
+    "pod_uuid": "podccc9f946-c476-47b8-a7c2-d7bf61af0e77",
+    "qos_class": "burstable",
+    "role": "system",
+    "classification_method": "idle_enumeration",
+    "found_in_idle": true,
+    "found_in_loaded": [
+      "cp_heavy_12client",
+      "dp_redis_density"
+    ],
+    "contexts": [
+      "cpu_pct",
+      "cpu_pressure",
+      "io_kibs",
+      "mem_mib",
+      "mem_pressure",
+      "mem_util_pct",
+      "pgfaults",
+      "throttled"
+    ]
+  }
+]

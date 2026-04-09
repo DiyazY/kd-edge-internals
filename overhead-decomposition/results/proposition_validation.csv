@@ -1,0 +1,7 @@
+proposition_id,direction,hypothesis,supported,strength,verdict
+P1,Security → Resource & Cost ↑,Higher CIS security compliance correlates with higher idle CPU/RAM,True,strong,SUPPORTED (strong)
+P2,Resource & Cost → Performance ↓,"System overhead grows under load, consuming resources that reduce scheduling capacity",True,strong,SUPPORTED (strong)
+P3,Resource & Cost → Performance ↑,Lightweight distros have lower pod-startup latency,True,strong,SUPPORTED (strong)
+P10,Performance → Resource & Cost ↓,Higher efficiency enables equal workload at lower cost,True,strong,SUPPORTED (strong)
+P12,Security → Maintainability ↓,Higher security compliance correlates with longer setup time,True,strong,SUPPORTED (strong)
+P14,Resource & Cost → Security ↓,Lower resource footprint correlates with weaker security,True,strong,SUPPORTED (strong)

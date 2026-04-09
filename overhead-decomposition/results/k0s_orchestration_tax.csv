@@ -1,0 +1,7 @@
+test_type,metric,system_overhead,node_capacity,orchestration_tax_pct
+cp_heavy_12client,cpu_pct,14.017228,400,3.504307
+cp_heavy_12client,mem_mib,60.424822,8192,0.737608
+dp_redis_density,cpu_pct,1.157927,400,0.289482
+dp_redis_density,mem_mib,53.497245,8192,0.653043
+idle,cpu_pct,1.521948,400,0.380487
+idle,mem_mib,46.325621,8192,0.565498

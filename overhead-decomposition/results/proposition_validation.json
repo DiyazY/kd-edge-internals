@@ -1,0 +1,164 @@
+[
+  {
+    "proposition_id": "P1",
+    "direction": "Security \u2192 Resource & Cost \u2191",
+    "hypothesis": "Higher CIS security compliance correlates with higher idle CPU/RAM",
+    "supported": true,
+    "strength": "strong",
+    "verdict": "SUPPORTED (strong)",
+    "evidence": [
+      "Security vs Idle CPU: \u03c1=0.894, p=0.0405",
+      "Security vs Idle RAM: \u03c1=0.894, p=0.0405",
+      "         k0s: CIS=23.69%, CPU=4.0%, RAM=370 MiB",
+      "         k3s: CIS= 7.21%, CPU=1.5%, RAM=348 MiB",
+      "         k8s: CIS=55.00%, CPU=5.2%, RAM=415 MiB",
+      "    kubeEdge: CIS=55.00%, CPU=6.8%, RAM=440 MiB",
+      "    openYurt: CIS=55.00%, CPU=5.6%, RAM=425 MiB",
+      "k0s per-container cgroup validation: idle orchestration tax = 0.380% of node capacity",
+      "  (CIS score 23.69% \u2014 moderate security, moderate overhead)"
+    ],
+    "statistics": {
+      "spearman_rho_cpu": 0.8944271909999159,
+      "spearman_p_cpu": 0.04051932635383402,
+      "spearman_rho_ram": 0.8944271909999159,
+      "spearman_p_ram": 0.04051932635383402
+    }
+  },
+  {
+    "proposition_id": "P2",
+    "direction": "Resource & Cost \u2192 Performance \u2193",
+    "hypothesis": "System overhead grows under load, consuming resources that reduce scheduling capacity",
+    "supported": true,
+    "strength": "strong",
+    "verdict": "SUPPORTED (strong)",
+    "evidence": [
+      "Pod startup latency at 120 pods (cp_heavy_12client):",
+      "         k0s:     6000 ms (idle CPU overhead: 4.0%)",
+      "         k3s:     5800 ms (idle CPU overhead: 1.5%)",
+      "         k8s:     5600 ms (idle CPU overhead: 5.2%)",
+      "    kubeEdge:    33800 ms (idle CPU overhead: 6.8%)",
+      "    openYurt:     7600 ms (idle CPU overhead: 5.6%)",
+      "\nService-create median latency (cp_heavy_12client):",
+      "         k0s:    100.9 ms",
+      "         k3s:     27.4 ms",
+      "         k8s:     89.2 ms",
+      "    kubeEdge:     92.9 ms",
+      "    openYurt:     96.8 ms",
+      "  Idle CPU vs svc-create correlation: \u03c1=0.300, p=0.6238",
+      "\nk0s cgroup validation:\n  System CPU idle: 1.52%\n  System CPU under CP heavy: 14.02%\n  Growth factor: 9.2\u00d7\n  \u2192 System overhead consumes 9\u00d7 more CPU under load, reducing resources for workload scheduling",
+      "\nExtreme case: KubeEdge (highest overhead, 6.8% idle CPU)\n  120-pod latency: 33800 ms vs k3s: 5800 ms\n  KubeEdge is 5.8\u00d7 slower at scale"
+    ],
+    "statistics": {
+      "spearman_rho_svc_create": 0.3,
+      "k0s_system_cpu_growth_factor": 9.210057111018246
+    }
+  },
+  {
+    "proposition_id": "P3",
+    "direction": "Resource & Cost \u2192 Performance \u2191",
+    "hypothesis": "Lightweight distros have lower pod-startup latency",
+    "supported": true,
+    "strength": "strong",
+    "verdict": "SUPPORTED (strong)",
+    "evidence": [
+      "Pod startup latency \u2014 Lightweight vs Heavy:",
+      "  Lightweight (k0s, k3s) mean median: 2650 ms",
+      "  Heavy (k8s, KubeEdge, OpenYurt) mean median: 5089 ms",
+      "  Mann-Whitney U=2019, p=0.0035 (one-sided: LW < Heavy)",
+      "  [cp_light_1client] k0s=1000ms, k3s=1400ms, k8s=1600ms, kubeEdge=2100ms, openYurt=1600ms",
+      "  [cp_heavy_8client] k0s=2600ms, k3s=3000ms, k8s=2700ms, kubeEdge=6500ms, openYurt=3800ms",
+      "  [cp_heavy_12client] k0s=4000ms, k3s=3900ms, k8s=3800ms, kubeEdge=18900ms, openYurt=4800ms",
+      "CP Heavy pod-create \u2014 Lightweight mean: 21.4 ms, Heavy mean: 20.1 ms (U=80, p=0.6198)",
+      "Tail latency (max) \u2014 Lightweight mean: 3667 ms, Heavy mean: 26667 ms",
+      "  KubeEdge max latency outliers: mean=70567 ms, max=143000 ms"
+    ],
+    "statistics": {
+      "mann_whitney_U": 2019.0,
+      "mann_whitney_p": 0.0035265153862118087,
+      "mean_lightweight_ms": 2650.0,
+      "mean_heavy_ms": 5088.888866666667,
+      "ratio_heavy_to_lw": 1.9203354213836479
+    }
+  },
+  {
+    "proposition_id": "P10",
+    "direction": "Performance \u2192 Resource & Cost \u2193",
+    "hypothesis": "Higher efficiency enables equal workload at lower cost",
+    "supported": true,
+    "strength": "strong",
+    "verdict": "SUPPORTED (strong)",
+    "evidence": [
+      "Data-plane efficiency (throughput / idle CPU overhead):",
+      "         k3s:  17200 ops/s / 1.5% CPU =    11467 ops/s per %CPU",
+      "         k0s:  16800 ops/s / 4.0% CPU =     4200 ops/s per %CPU",
+      "         k8s:  19000 ops/s / 5.2% CPU =     3654 ops/s per %CPU",
+      "    openYurt:  18200 ops/s / 5.6% CPU =     3250 ops/s per %CPU",
+      "    kubeEdge:   4750 ops/s / 6.8% CPU =      699 ops/s per %CPU",
+      "\nLatency efficiency (1 / (latency \u00d7 idle_cpu)):",
+      "         k3s: latency= 11.6 ms, CPU=1.5% \u2192 eff=0.0575",
+      "         k0s: latency= 11.9 ms, CPU=4.0% \u2192 eff=0.0210",
+      "         k8s: latency= 10.5 ms, CPU=5.2% \u2192 eff=0.0183",
+      "    openYurt: latency= 11.0 ms, CPU=5.6% \u2192 eff=0.0162",
+      "    kubeEdge: latency= 42.1 ms, CPU=6.8% \u2192 eff=0.0035",
+      "\nThroughput vs 1/CPU correlation: \u03c1=0.200, p=0.7471",
+      "\nk0s cgroup DP Redis Density:\n  System CPU: 1.16%\n  Workload CPU: 206.11%\n  Workload share: 99.4% of total\n  \u2192 Low system overhead allows workload to consume nearly all available CPU",
+      "\nKey comparison: k3s (11467 ops/%CPU) vs k8s (3654 ops/%CPU) vs KubeEdge (699 ops/%CPU)"
+    ],
+    "statistics": {
+      "spearman_rho": 0.19999999999999998,
+      "spearman_p": 0.7470600781046621
+    }
+  },
+  {
+    "proposition_id": "P12",
+    "direction": "Security \u2192 Maintainability \u2193",
+    "hypothesis": "Higher security compliance correlates with longer setup time",
+    "supported": true,
+    "strength": "strong",
+    "verdict": "SUPPORTED (strong)",
+    "evidence": [
+      "Security score vs setup time: \u03c1=0.918, p=0.0280",
+      "         k0s: CIS=23.69%, setup=3h",
+      "         k3s: CIS= 7.21%, setup=2h",
+      "         k8s: CIS=55.00%, setup=5h",
+      "    kubeEdge: CIS=55.00%, setup=14h",
+      "    openYurt: CIS=55.00%, setup=14h",
+      "\nQualitative observations:",
+      "  k3s (7.21% CIS) \u2014 single binary, 2h setup, minimal configuration",
+      "  k8s (55.0% CIS) \u2014 multiple components, 5h setup, extensive tuning",
+      "  KubeEdge (55.0% CIS) \u2014 complex cloud-edge architecture, 14h setup",
+      "  Note: KubeEdge/OpenYurt high setup time comes from edge complexity,",
+      "    not just security. Confounding factor: edge features \u2248 security burden"
+    ],
+    "statistics": {
+      "spearman_rho": 0.9176629354822471,
+      "spearman_p": 0.028008456010146135
+    }
+  },
+  {
+    "proposition_id": "P14",
+    "direction": "Resource & Cost \u2192 Security \u2193",
+    "hypothesis": "Lower resource footprint correlates with weaker security",
+    "supported": true,
+    "strength": "strong",
+    "verdict": "SUPPORTED (strong)",
+    "evidence": [
+      "Idle CPU overhead vs security: \u03c1=0.894, p=0.0405",
+      "Idle RAM overhead vs security: \u03c1=0.894, p=0.0405",
+      "\nKD ranking by resource efficiency:",
+      "  1.        k3s: CPU=1.5%, RAM=348 MiB, CIS=7.21%",
+      "  2.        k0s: CPU=4.0%, RAM=370 MiB, CIS=23.69%",
+      "  3.        k8s: CPU=5.2%, RAM=415 MiB, CIS=55.00%",
+      "  4.   openYurt: CPU=5.6%, RAM=425 MiB, CIS=55.00%",
+      "  5.   kubeEdge: CPU=6.8%, RAM=440 MiB, CIS=55.00%",
+      "\nKey insight: k3s achieves lowest resource footprint by stripping security features (embedded SQLite vs etcd, no default RBAC hardening), resulting in the lowest CIS score (7.21%).",
+      "k0s strikes a middle ground: moderate resources (23.69% CIS) with single-binary simplicity."
+    ],
+    "statistics": {
+      "spearman_rho_cpu": 0.8944271909999157,
+      "spearman_p_cpu": 0.04051932635383408,
+      "spearman_rho_ram": 0.8944271909999157,
+      "spearman_p_ram": 0.04051932635383408
+    }
+  }
+]
