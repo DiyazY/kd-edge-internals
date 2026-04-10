@@ -241,43 +241,90 @@ def compute_power_for_kd_test(kd: str, test_type: str) -> dict | None:
 # ═════════════════════════════════════════════════════════════════════════════
 
 def compute_interrupts_for_kd_test(kd: str, test_type: str) -> dict | None:
-    """Compute interrupt stats for a KD/test from parquet data."""
-    irq_df = load_parquet(kd, test_type, "system.interrupts", WORKER_NODES)
-    if irq_df.empty:
+    """Compute interrupt stats for a KD/test using per-run means.
+
+    Computes the mean IRQ rate for each run independently, then returns
+    the mean and std of those per-run means. This avoids inflating rates
+    when multiple runs share the same relative timestamps after concatenation.
+    """
+    run_means = []
+    for run_num in range(1, NUM_RUNS + 1):
+        path = os.path.join(PARQUET_ROOT, kd, f"{test_type}_run{run_num}.parquet")
+        if not os.path.exists(path):
+            continue
+        con = duckdb.connect()
+        try:
+            host_list = ", ".join(f"'{h}'" for h in WORKER_NODES)
+            query = f"""
+                SELECT hostname, value, relative_time AS timestamp
+                FROM '{path}'
+                WHERE chart_context = 'system.interrupts'
+                AND hostname IN ({host_list})
+            """
+            df = con.execute(query).fetchdf()
+        finally:
+            con.close()
+        if df.empty:
+            continue
+        # Sum across IRQ sources per (timestamp, hostname), then mean across workers
+        total_per_ts = (
+            df.groupby(["timestamp", "hostname"])["value"]
+            .sum().reset_index()
+        )
+        mean_per_ts = total_per_ts.groupby("timestamp")["value"].mean()
+        run_means.append(mean_per_ts.mean())
+
+    if not run_means:
         return None
-
-    # Total interrupt rate per timestamp (sum across sources, mean across workers)
-    total_per_ts = (
-        irq_df.groupby(["timestamp", "hostname"])["value"]
-        .sum().reset_index()
-    )
-    mean_per_ts = total_per_ts.groupby("timestamp")["value"].mean()
-
     return {
-        "total_irq_rate_mean": mean_per_ts.mean(),
-        "total_irq_rate_std": mean_per_ts.std(),
+        "total_irq_rate_mean": float(np.mean(run_means)),
+        "total_irq_rate_std": float(np.std(run_means, ddof=1)) if len(run_means) > 1 else 0.0,
     }
 
 
 def compute_softirqs_for_kd_test(kd: str, test_type: str) -> dict | None:
-    """Compute softirq category breakdown for a KD/test."""
-    sirq_df = load_parquet(kd, test_type, "system.softirqs", WORKER_NODES)
-    if sirq_df.empty:
+    """Compute softirq category breakdown for a KD/test using per-run means.
+
+    Computes per-category rates for each run independently and averages,
+    matching the same per-run aggregation used for hardware interrupts.
+    """
+    run_cat_rates: dict[str, list[float]] = {}
+    run_totals: list[float] = []
+
+    for run_num in range(1, NUM_RUNS + 1):
+        path = os.path.join(PARQUET_ROOT, kd, f"{test_type}_run{run_num}.parquet")
+        if not os.path.exists(path):
+            continue
+        con = duckdb.connect()
+        try:
+            host_list = ", ".join(f"'{h}'" for h in WORKER_NODES)
+            query = f"""
+                SELECT metric_id AS id, value
+                FROM '{path}'
+                WHERE chart_context = 'system.softirqs'
+                AND hostname IN ({host_list})
+            """
+            df = con.execute(query).fetchdf()
+        finally:
+            con.close()
+        if df.empty:
+            continue
+        per_cat = df.groupby("id")["value"].mean()
+        run_totals.append(per_cat.sum())
+        for cat, rate in per_cat.items():
+            run_cat_rates.setdefault(cat, []).append(rate)
+
+    if not run_totals:
         return None
 
-    # Per-category mean rate across workers
-    per_cat = (
-        sirq_df.groupby("id")["value"]
-        .mean().reset_index()
-        .rename(columns={"id": "category", "value": "mean_rate"})
-    )
-    total = per_cat["mean_rate"].sum()
-    per_cat["proportion"] = per_cat["mean_rate"] / total if total > 0 else 0
-
+    cat_rates = {cat: float(np.mean(rates)) for cat, rates in run_cat_rates.items()}
+    total_rate = float(np.mean(run_totals))
+    total_cat = sum(cat_rates.values())
     return {
-        "total_rate_mean": total,
-        "categories": dict(zip(per_cat["category"], per_cat["proportion"])),
-        "cat_rates": dict(zip(per_cat["category"], per_cat["mean_rate"])),
+        "total_rate_mean": total_rate,
+        "categories": {cat: r / total_cat if total_cat > 0 else 0.0
+                       for cat, r in cat_rates.items()},
+        "cat_rates": cat_rates,
     }
 
 
@@ -286,17 +333,46 @@ def compute_softirqs_for_kd_test(kd: str, test_type: str) -> dict | None:
 # ═════════════════════════════════════════════════════════════════════════════
 
 def compute_throttling_for_kd_test(kd: str, test_type: str) -> dict | None:
-    """Compute throttling stats for a KD/test from parquet data."""
-    thr_df = load_parquet(kd, test_type, "cpu.core_throttling", ["master"])
-    if thr_df.empty:
+    """Compute throttling stats for a KD/test using per-run means.
+
+    Computes the total throttling rate (summed across cores) per timestamp for
+    each run independently, then averages those per-run summaries. This avoids
+    inflating counts when multiple runs share the same relative timestamps after
+    concatenation.
+    """
+    run_means = []
+    run_maxes = []
+    run_pct_nonzero = []
+
+    for run_num in range(1, NUM_RUNS + 1):
+        path = os.path.join(PARQUET_ROOT, kd, f"{test_type}_run{run_num}.parquet")
+        if not os.path.exists(path):
+            continue
+        con = duckdb.connect()
+        try:
+            query = f"""
+                SELECT value, relative_time AS timestamp
+                FROM '{path}'
+                WHERE chart_context = 'cpu.core_throttling'
+                AND hostname = 'master'
+            """
+            df = con.execute(query).fetchdf()
+        finally:
+            con.close()
+        if df.empty:
+            continue
+        # Sum across cores per timestamp (correct: we want total throttle events)
+        per_ts = df.groupby("timestamp")["value"].sum().reset_index()
+        run_means.append(per_ts["value"].mean())
+        run_maxes.append(per_ts["value"].max())
+        run_pct_nonzero.append((per_ts["value"] > 0).mean() * 100)
+
+    if not run_means:
         return None
-
-    per_ts = thr_df.groupby("timestamp")["value"].sum().reset_index()
-
     return {
-        "throttle_rate_mean": per_ts["value"].mean(),
-        "throttle_rate_max": per_ts["value"].max(),
-        "pct_nonzero": (per_ts["value"] > 0).mean() * 100,
+        "throttle_rate_mean": float(np.mean(run_means)),
+        "throttle_rate_max": float(np.max(run_maxes)),
+        "pct_nonzero": float(np.mean(run_pct_nonzero)),
     }
 
 
